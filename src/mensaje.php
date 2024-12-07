@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE')
   $statement->bindValue(':id', $id);
   $statement->execute();
 	header("HTTP/1.1 200 OK");
+  echo json_encode("Elemento Eliminado");
 	exit();
 }
 
@@ -81,6 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT')
 
     $statement->execute();
     header("HTTP/1.1 200 OK");
+    echo json_encode($input);
     exit();
 }
 
